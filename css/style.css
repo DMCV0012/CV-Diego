@@ -284,6 +284,26 @@ body.dark-mode .skills-list li {
   color: #fdcb6e;
 }
 
+/* Títulos de categorías de habilidades */
+#skills h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #00b894;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+body.dark-mode #skills h3 {
+  color: #fdcb6e;
+}
+
+/* Separación entre listas de habilidades */
+#skills .skills-list {
+  margin-bottom: 1rem;
+}
+
 /* Experiencia y Educación: tarjetas internas */
 section ul {
   padding: 0;
