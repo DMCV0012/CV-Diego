@@ -1,4 +1,3 @@
-// Agregar desplazamiento suave a los enlaces del menú
 document.querySelectorAll('nav a').forEach((link) => {
   link.addEventListener('click', (e) => {
     e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
@@ -15,12 +14,25 @@ document.querySelectorAll('nav a').forEach((link) => {
 });
 
 // Alternar entre modo claro y oscuro con el toggle switch
-const themeToggle = document.getElementById('theme-toggle');
-const themeLabel = document.getElementById('theme-label');
+const toggle = document.getElementById('theme-toggle');
+const label = document.getElementById('theme-label');
+const body = document.body;
 
-themeToggle.addEventListener('change', () => {
-  document.body.classList.toggle('dark-mode');
-  themeLabel.textContent = document.body.classList.contains('dark-mode')
-    ? 'Modo oscuro'
-    : 'Modo claro';
+// Cargar preferencia guardada
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-mode');
+  toggle.checked = true;
+  label.textContent = 'Modo oscuro';
+}
+
+toggle.addEventListener('change', () => {
+  if (toggle.checked) {
+    body.classList.add('dark-mode');
+    label.textContent = 'Modo oscuro';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    body.classList.remove('dark-mode');
+    label.textContent = 'Modo claro';
+    localStorage.setItem('theme', 'light');
+  }
 });
