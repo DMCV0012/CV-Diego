@@ -240,99 +240,66 @@ body.dark-mode .about-text {
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 10px 20px;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0 25px 0;
 }
 
 .skills-list li {
-  background: linear-gradient(90deg, #00b894 60%, #0984e3 100%);
-  color: #fff;
-  padding: 0.5rem 1.3rem;
-  border-radius: 2rem;
-  font-weight: 600;
+  background: #f0f0f0;
+  color: #222;
+  border-radius: 20px;
+  padding: 6px 18px;
   font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.1);
-  letter-spacing: 1px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  animation: popIn 0.5s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: background 0.2s, color 0.2s;
 }
 
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+body.dark .skills-list li {
+  background: #222;
+  color: #f0f0f0;
 }
 
-.skills-list li:hover {
-  transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 184, 148, 0.18);
-  background: linear-gradient(90deg, #0984e3 60%, #00b894 100%);
-}
-
-body.dark-mode .skills-list li {
-  background: linear-gradient(90deg, #636e72 60%, #00b894 100%);
-  color: #fdcb6e;
-}
-
-/* Títulos de categorías de habilidades */
 #skills h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #00b894;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  margin-top: 18px;
+  color: #007acc;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
 }
 
-body.dark-mode #skills h3 {
-  color: #fdcb6e;
-}
-
-/* Separación entre listas de habilidades */
-#skills .skills-list {
-  margin-bottom: 1rem;
-}
-
-/* Experiencia y Educación: tarjetas internas */
-section ul {
-  padding: 0;
+#experience ul {
   list-style: none;
+  padding: 0;
 }
 
-section ul > li {
-  background: rgba(255, 255, 255, 0.45);
-  margin-bottom: 1.2rem;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
-  padding: 1rem 1.2rem;
-  transition: background 0.4s;
-  border-left: 6px solid #00b894;
-  position: relative;
+#experience li {
+  background: #fafafa;
+  border-left: 4px solid #007acc;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
 
-section ul > li strong {
-  color: #0984e3;
+body.dark #experience li {
+  background: #23272f;
+  border-left-color: #4fc3f7;
+}
+
+#experience strong {
+  color: #007acc;
   font-size: 1.08rem;
 }
 
-body.dark-mode section ul > li {
-  background: rgba(44, 62, 80, 0.55);
-  border-left: 6px solid #fdcb6e;
+#experience p {
+  margin: 6px 0 0 0;
+  color: #444;
+  font-size: 0.98rem;
 }
 
-body.dark-mode section ul > li strong {
-  color: #fdcb6e;
+body.dark #experience p {
+  color: #ddd;
 }
 
 /* Proyectos: tarjetas pequeñas */
