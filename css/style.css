@@ -79,7 +79,7 @@ body.dark-mode #theme-label {
 
 /* Colores para el modo claro */
 body {
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   line-height: 1.7;
   margin: 0;
   padding: 0;
@@ -87,6 +87,10 @@ body {
   color: #222f3e;
   transition: background 0.5s, color 0.5s;
   min-height: 100vh;
+}
+
+p {
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 header {
@@ -123,24 +127,25 @@ header p {
 }
 
 /* Colores para el modo oscuro */
-body.dark-mode {
-  background: linear-gradient(120deg, #232526 0%, #414345 100%);
-  color: #f1f2f6;
+body.dark {
+  background: #181c22;
+  color: #f0f0f0;
 }
 
-body.dark-mode header {
-  background: rgba(44, 62, 80, 0.45);
-  color: #fff;
+body.dark header,
+body.dark section,
+body.dark footer {
+  background: #23272f;
+  color: #f0f0f0;
 }
 
-body.dark-mode section {
-  background: rgba(44, 62, 80, 0.65);
-  color: #f1f2f6;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+body.dark a {
+  color: #4fc3f7;
 }
 
-body.dark-mode footer {
-  background: linear-gradient(90deg, #636e72, #00b894);
+body.dark .skills-list li {
+  background: #222;
+  color: #f0f0f0;
 }
 
 /* Secciones como tarjetas glassmorphism */
@@ -232,7 +237,7 @@ section li {
   line-height: 1.8;
 }
 
-body.dark-mode .about-text {
+body.dark .about-text {
   color: #f1f2f6;
 }
 
@@ -313,7 +318,7 @@ body.dark #experience p {
   transition: background 0.3s;
 }
 
-body.dark-mode #projects ul > li {
+body.dark #projects ul > li {
   background: rgba(9, 132, 227, 0.13);
   border-left: 4px solid #fdcb6e;
 }
@@ -351,16 +356,16 @@ body.dark-mode #projects ul > li {
   color: #0984e3;
 }
 
-body.dark-mode #contacts ul li {
+body.dark #contacts ul li {
   background: rgba(9, 132, 227, 0.13);
   color: #fdcb6e;
 }
 
-body.dark-mode #contacts ul li a {
+body.dark #contacts ul li a {
   color: #fdcb6e;
 }
 
-body.dark-mode #contacts ul li a:hover {
+body.dark #contacts ul li a:hover {
   color: #00b894;
 }
 
@@ -377,7 +382,7 @@ footer {
   box-shadow: 0 -2px 12px rgba(44, 62, 80, 0.08);
 }
 
-body.dark-mode footer {
+body.dark footer {
   background: linear-gradient(90deg, #636e72, #00b894);
 }
 

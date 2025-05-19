@@ -1,17 +1,20 @@
-document.querySelectorAll('nav a').forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-    const targetId = link.getAttribute('href').substring(1); // Obtener el ID del destino
-    const targetElement = document.getElementById(targetId);
+// Scroll suave para navegación (si existe nav)
+const navLinks = document.querySelectorAll('nav a');
+if (navLinks.length > 0) {
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
 
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 50, // Ajustar la posición para evitar que quede pegado al borde
-        behavior: 'smooth', // Desplazamiento suave
-      });
-    }
+      if (targetElement) {
+        const yOffset = -50;
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
   });
-});
+}
 
 // Alternar entre modo claro y oscuro con el toggle switch
 const toggle = document.getElementById('theme-toggle');
@@ -20,18 +23,18 @@ const body = document.body;
 
 // Cargar preferencia guardada
 if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
+  body.classList.add('dark');
   toggle.checked = true;
   label.textContent = 'Modo oscuro';
 }
 
 toggle.addEventListener('change', () => {
   if (toggle.checked) {
-    body.classList.add('dark-mode');
+    body.classList.add('dark');
     label.textContent = 'Modo oscuro';
     localStorage.setItem('theme', 'dark');
   } else {
-    body.classList.remove('dark-mode');
+    body.classList.remove('dark');
     label.textContent = 'Modo claro';
     localStorage.setItem('theme', 'light');
   }
